@@ -33,7 +33,7 @@ export function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/liogi-logo.png" className="flex items-center">
             <span className="text-2xl font-bold text-blue-500">Lio Go</span>
           </Link>
           
