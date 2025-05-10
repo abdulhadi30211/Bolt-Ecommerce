@@ -14,16 +14,16 @@ export function Footer() {
               Your one-stop shop for affordable products. Quality goods at unbeatable prices.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61561999464446" className="text-gray-400 hover:text-white transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.twitter.com" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.instagram.com/techmalik._.1/" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin size={20} />
               </a>
             </div>
@@ -99,15 +99,15 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="mr-2 text-gray-400 flex-shrink-0 mt-1" size={18} />
-                <span className="text-gray-400">123 Lio Street, Shopping District, City</span>
+                <span className="text-gray-400"> 18 Street, Mera Mripur, Abbottabad</span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 text-gray-400" size={18} />
-                <span className="text-gray-400">+1 (555) 123-4567</span>
+                <span className="text-gray-400">+92 (0) 333-3551378</span>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-2 text-gray-400" size={18} />
-                <span className="text-gray-400">support@liogo.com</span>
+                <span className="text-gray-400">muhammadrashi60776@gmail.com</span>
               </li>
             </ul>
           </div>
