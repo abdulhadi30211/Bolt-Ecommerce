@@ -1,42 +1,40 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Search, Menu, X, User } from 'lucide-react';
+import { ShoppingCart, Search, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { useAuth } from '../context/AuthContext';
-import { AuthModal } from './AuthModal';
+import './header.css'; // adjust the path as needed
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const { cart } = useCart();
-  const { user, signOut } = useAuth();
-  
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  
+
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Implementation for search functionality would go here
     console.log('Searching for:', searchQuery);
   };
 
-  const handleAuthClick = () => {
-    if (user) {
-      signOut();
-    } else {
-      setIsAuthModalOpen(true);
-    }
-  };
-  
   return (
     <header className="sticky top-0 bg-white shadow-md z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/liogi-logo.png" className="flex items-center">
-            <span className="text-2xl font-bold text-blue-500">Lio Go</span>
-          </Link>
-          
+
+
+    <div className="flex items-center">
+      <img
+        src="https://media-hosting.imagekit.io/ee40767cd7f04f13/Lio%20Gi%20Products%20Msacot%20Logo%20Type.png?Expires=1841508802&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=ruVU0ekAlw0bWZTRFLA2~Hn23wYvbemNCuMfMqE-FLbSuCEsaAoCuA8H23ORFm1Nimoi9Ij9qq7AvqxKK0o8V5V3Qdk1QhKLSZ8zcKZ3bUm3w-Ul~SrzPt6qhIhiGCXWzQ2PPJwfbsdvDtIweS~hLFFVJYd8mrrVqtNbZ6skBQSsAlZcVftIG51frzVH7fLzKriSCCUSLowaNIo1hz-c02RDFjPnSIHnwtzbiC15iRKF7xuujMgPnc6~8bifkgyJeb-kTyyG09fOaTUDKvGnuEj2RmkZPUhS~ZcyJ0r0jutgJlZFvOe2ebsb4~K2Jm~anY4HsJcvFoUqDhJpxt994A__"
+        alt="Lio Gi"
+        className="header-logo"
+      />
+      <Link to="https://liogi-store.vercel.app/" className="text-2xl font-bold text-blue-500 ml-4">
+        Lio Gi
+      </Link>
+    </div>
+
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <Link to="/" className="text-gray-700 hover:text-blue-500 transition-colors">Home</Link>
@@ -45,7 +43,7 @@ export function Header() {
             <Link to="/products/clothing" className="text-gray-700 hover:text-blue-500 transition-colors">Clothing</Link>
             <Link to="/products/home" className="text-gray-700 hover:text-blue-500 transition-colors">Home</Link>
           </nav>
-          
+
           {/* Search Bar */}
           <div className="hidden md:block flex-1 max-w-md mx-4">
             <form onSubmit={handleSearchSubmit} className="relative">
@@ -56,7 +54,7 @@ export function Header() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <button 
+              <button
                 type="submit"
                 className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-500"
               >
@@ -64,19 +62,9 @@ export function Header() {
               </button>
             </form>
           </div>
-          
-          {/* Cart and Auth Icons */}
-          <div className="flex items-center space-x-4">
-            <button
-              onClick={handleAuthClick}
-              className="flex items-center text-gray-700 hover:text-blue-500 transition-colors"
-            >
-              <User size={20} />
-              <span className="ml-2 hidden sm:inline">
-                {user ? 'Sign Out' : 'Sign In'}
-              </span>
-            </button>
 
+          {/* Cart Icon */}
+          <div className="flex items-center space-x-4">
             <Link to="/cart" className="relative">
               <ShoppingCart className="text-gray-700 hover:text-blue-500 transition-colors" />
               {cart.items.length > 0 && (
@@ -85,14 +73,14 @@ export function Header() {
                 </span>
               )}
             </Link>
-            
+
             {/* Mobile Menu Button */}
             <button className="md:hidden" onClick={toggleMenu}>
               {isMenuOpen ? <X /> : <Menu />}
             </button>
           </div>
         </div>
-        
+
         {/* Mobile Search */}
         <div className="mt-4 md:hidden">
           <form onSubmit={handleSearchSubmit} className="relative">
@@ -103,7 +91,7 @@ export function Header() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <button 
+            <button
               type="submit"
               className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-500"
             >
@@ -111,14 +99,14 @@ export function Header() {
             </button>
           </form>
         </div>
-        
+
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="mt-4 md:hidden">
             <ul className="flex flex-col space-y-2">
               <li>
-                <Link 
-                  to="/" 
+                <Link
+                  to="/"
                   className="block py-2 text-gray-700 hover:text-blue-500"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -126,8 +114,8 @@ export function Header() {
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/products" 
+                <Link
+                  to="/products"
                   className="block py-2 text-gray-700 hover:text-blue-500"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -135,8 +123,8 @@ export function Header() {
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/products/electronics" 
+                <Link
+                  to="/products/electronics"
                   className="block py-2 text-gray-700 hover:text-blue-500"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -144,8 +132,8 @@ export function Header() {
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/products/clothing" 
+                <Link
+                  to="/products/clothing"
                   className="block py-2 text-gray-700 hover:text-blue-500"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -153,8 +141,8 @@ export function Header() {
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/products/home" 
+                <Link
+                  to="/products/home"
                   className="block py-2 text-gray-700 hover:text-blue-500"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -165,8 +153,6 @@ export function Header() {
           </nav>
         )}
       </div>
-
-      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
     </header>
   );
 }
