@@ -145,7 +145,7 @@ export const products: Product[] = [
     price: 39.99,
     originalPrice: 99.99,
     description: 'Warm and water-resistant winter jacket with multiple pockets.',
-    image: 'bit.ly/liogi-image-12',
+    image: 'https://media-hosting.imagekit.io/3a0c6979292b4d3b/download.jpg?Expires=1841506550&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=hhvvzUMSxBjoP1UTeQmL6gEjA6J0qPbfoUnmjSxgG~V~2Y2353e74pdaZmEsdLJA-YwXSKy1GCKCnQBd8luc5XERnujDF30jqw1wCgj4FGT~dcT0lAr-ssAe9giSw6hh43ZnNmxUrGfivTIjq3x5elus7dlnEjC76WSg3xYdC12jBNqiqKKIKOF1VCWKHZ~lfKGpgAlrAFoa8~Hih5Xx9cCeg5v7Dg6ir7d1NenZX~B82wmx93-NeT80Chehjk7J1eK7quTb5CCEqBPNaBS5LTfkUliT6d4f8QmM0QVez3gJUmpZKiT4yH9qF5hcMROq5xlsFTDcSDX-YpHjSBMU0Q__',
     category: 'clothing',
     rating: 4.6,
     inStock: true,
