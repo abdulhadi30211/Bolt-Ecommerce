@@ -1,13 +1,51 @@
 /* header.css */
 
+/* Styling for the logo image */
 .header-logo {
   max-height: 50px; /* Adjust height as needed */
-  width: auto;
-  object-fit: contain;
+  width: 50px; /* Set width to the same value as height for a perfect circle */
+  object-fit: cover; /* Ensure the image covers the circle */
+  border-radius: 50%; /* Make the image circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add smooth transition for hover effects */
 }
 
+/* Add hover effect */
+.header-logo:hover {
+  transform: scale(1.1); /* Slight zoom-in effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+/* Media query for responsive design */
 @media (max-width: 768px) {
   .header-logo {
-    max-height: 40px;
+    max-height: 40px; /* Adjust for smaller screen sizes */
+    width: 40px; /* Keep the circle shape */
   }
+}
+
+/* Additional styles for the logo container */
+.header-container {
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: flex-start; /* Align items to the left */
+  gap: 10px; /* Space between the logo and the text */
+  padding: 10px 20px; /* Add some padding for spacing */
+  background: linear-gradient(90deg, #1e3c72, #2a5298); /* Stylish gradient background */
+  border-radius: 20px; /* Rounded corners for the container */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for the header */
+}
+
+.header-container a {
+  font-size: 24px; /* Increase the font size of the text */
+  font-weight: bold;
+  color: white; /* White text color */
+  text-decoration: none; /* Remove underline from the link */
+  text-transform: uppercase; /* Uppercase text for a sleek look */
+  letter-spacing: 2px; /* Slight letter-spacing for style */
+  transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.header-container a:hover {
+  color: #f0b800; /* Change color on hover for effect */
 }
