@@ -39,7 +39,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       password,
       options: {
         data: userData,
-        emailRedirectTo: `${window.location.origin}/auth/confirm`,
+        emailRedirectTo: 'https://liogi-store.vercel.app',
       }
     });
     if (error) throw error;
