@@ -36,7 +36,7 @@ export function Header() {
           {/* Logo with image and text */}
           <div className="header-container">
             <img
-              src="https://media-hosting.imagekit.io/ee40767cd7f04f13/Lio%20Gi%20Products%20Msacot%20Logo%20Type.png?Expires=1841508802&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=ruVU0ekAlw0bWZTRFLA2~Hn23wYvbemNCuMfMqE-FLbSuCEsaAoCuA8H23ORFm1Nimoi9Ij9qq7AvqxKK0o8V5V3Qdk1QhKLSZ8zcKZ3bUm3w-Ul~SrzPt6qhIhiGCXWzQ2PPJwfbsdvDtIweS~hLFFVJYd8mrrVqtNbZ6skBQSsAlZcVftIG51frzVH7fLzKriSCCUSLowaNIo1hz-c02RDFjPnSIHnwtzbiC15iRKF7xuujMgPnc6~8bifkgyJeb-kTyyG09fOaTUDKvGnuEj2RmkZPUhS~ZcyJ0r0jutgJlZFvOe2ebsb4~K2Jm~anY4HsJcvFoUqDhJpxt994A__"
+              src="https://ik.imagekit.io/123e/Lio%20Gi%20Products%20Msacot%20Logo%20Type.png?updatedAt=1748181154885"
               alt="Lio Gi"
               className="header-logo"
             />
