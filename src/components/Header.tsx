@@ -36,7 +36,7 @@ export function Header() {
           {/* Logo with image and text */}
           <div className="header-container">
             <img
-              src="https://ik.imagekit.io/123e/Lio%20Gi%20Products%20Msacot%20Logo%20Type.png?updatedAt=1748181154885"
+              src="https://ik.imagekit.io/123e/e71120f7-502c-4301-a02d-b1e49de0bf99.jpg?updatedAt=1749098718933"
               alt="Lio Gi"
               className="header-logo"
             />
