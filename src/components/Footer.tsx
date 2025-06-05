@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Column 1 - About */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Lio Go</h3>
+            <h3 className="text-xl font-semibold mb-4">Luminvera</h3>
             <p className="text-gray-400 mb-4">
               Your one-stop shop for affordable products. Quality goods at unbeatable prices.
             </p>
