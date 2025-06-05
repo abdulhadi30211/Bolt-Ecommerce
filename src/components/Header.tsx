@@ -40,7 +40,7 @@ export function Header() {
               alt="Luminvera"
               className="header-logo"
             />
-            <Link to="https://liogi-store.vercel.app/">Lio Gi</Link>
+            <Link to="https://liogi-store.vercel.app/">Luminvera</Link>
           </div>
 
           {/* Desktop Navigation */}
