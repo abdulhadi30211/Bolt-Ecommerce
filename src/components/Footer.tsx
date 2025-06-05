@@ -20,7 +20,7 @@ export function Footer() {
               <a href="https://www.twitter.com" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="https://www.instagram.com/techmalik._.1/" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.instagram.com/luminvera?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram size={20} />
               </a>
               <a href="https://www.linkedin.com" className="text-gray-400 hover:text-white transition-colors">
