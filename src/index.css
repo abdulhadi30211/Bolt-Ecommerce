@@ -21,8 +21,4 @@
   .border-custom {
     @apply border-border;
   }
-  
-  .bg-highlight {
-    @apply bg-highlight;
-  }
 }
