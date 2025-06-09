@@ -12,7 +12,7 @@ export function Navbar() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
   const debouncedSearch = useDebounce(searchQuery, 500);
-  
+
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
   const { cart } = useCart();
@@ -37,9 +37,12 @@ export function Navbar() {
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          
+          {/* Premium Styled Logo */}
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-blue-600">Lio GI</span>
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-105">
+              <span className="text-white text-xl md:text-2xl font-bold tracking-wide">L</span>
+            </div>
           </Link>
 
           {/* Search Bar - Desktop */}
@@ -85,7 +88,7 @@ export function Navbar() {
                 </Button>
                 
                 {isMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
                     <Link
                       to="/profile"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
