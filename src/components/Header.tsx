@@ -33,12 +33,17 @@ export function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           
-          {/* Premium Logo Symbol Only */}
+          {/* Premium Logo with Image */}
           <Link to="/" className="premium-logo-container">
-            <div className="premium-logo-wrapper">
-              <div className="premium-logo-symbol">
-                <span className="logo-letter">L</span>
-                <div className="logo-accent"></div>
+            <div className="premium-logo-frame">
+              <img
+                src="https://ik.imagekit.io/123e/e71120f7-502c-4301-a02d-b1e49de0bf99.jpg?updatedAt=1749098718933"
+                alt="Luminvera"
+                className="premium-logo-image"
+              />
+              <div className="premium-logo-overlay">
+                <div className="premium-logo-shine"></div>
+                <div className="premium-logo-accent"></div>
               </div>
             </div>
           </Link>
