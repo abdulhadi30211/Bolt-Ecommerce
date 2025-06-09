@@ -82,7 +82,7 @@ export const products: Product[] = [
     price: 24.99,
     originalPrice: 59.99,
     description: 'Professional chef knife set with ergonomic handles for easier cutting.',
-    image: 'https://images.pexels.com/photos/3626622/pexels-photo-3626622.jpeg',
+    image: 'https://ik.imagekit.io/123e/download%20(2).jpg?updatedAt=1749468981834',
     category: 'home',
     rating: 4.8,
     inStock: true,
