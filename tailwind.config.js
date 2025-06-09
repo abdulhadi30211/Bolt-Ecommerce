@@ -5,8 +5,8 @@ export default {
     extend: {
       colors: {
         // 🎨 Custom color palette
-        'bg-primary': '#FFFFFF',       // White background for body
-        'text-primary': '#222222',     // Dark Grey general text and headings
+        'bg-primary': '#FFFFFF',       // White background
+        'text-primary': '#222222',     // Dark Grey text and headings
         'heading': '#222222',          // Headings
         'footer': '#E0E7E3',           // Light Mint Green (footer/sections)
         'accent': '#C58C63',           // Light Brown (links/buttons)
