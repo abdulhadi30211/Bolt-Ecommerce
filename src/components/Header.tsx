@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from './AuthModal';
-import './header.css'; // Import your custom CSS
+import './header.css';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,15 +33,15 @@ export function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           
-          {/* Logo with image and text */}
-          <div className="header-container">
-            <img
-              src="https://ik.imagekit.io/123e/e71120f7-502c-4301-a02d-b1e49de0bf99.jpg?updatedAt=1749098718933"
-              alt="Luminvera"
-              className="header-logo"
-            />
-            <Link to="https://liogi-store.vercel.app/" className="text-heading font-bold text-xl">Luminvera</Link>
-          </div>
+          {/* Premium Logo Symbol Only */}
+          <Link to="/" className="premium-logo-container">
+            <div className="premium-logo-wrapper">
+              <div className="premium-logo-symbol">
+                <span className="logo-letter">L</span>
+                <div className="logo-accent"></div>
+              </div>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">

@@ -1,51 +1,157 @@
-/* header.css */
-
-/* Styling for the logo image */
-.header-logo {
-  max-height: 50px; /* Adjust height as needed */
-  width: 50px; /* Set width to the same value as height for a perfect circle */
-  object-fit: cover; /* Ensure the image covers the circle */
-  border-radius: 50%; /* Make the image circular */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add smooth transition for hover effects */
+/* Premium Logo Styles */
+.premium-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Add hover effect */
-.header-logo:hover {
-  transform: scale(1.1); /* Slight zoom-in effect */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+.premium-logo-container:hover {
+  transform: scale(1.05);
 }
 
-/* Media query for responsive design */
-@media (max-width: 768px) {
-  .header-logo {
-    max-height: 40px; /* Adjust for smaller screen sizes */
-    width: 40px; /* Keep the circle shape */
+.premium-logo-wrapper {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.premium-logo-symbol {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #2563eb 0%, #9333ea 50%, #f59e0b 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 8px 32px rgba(37, 99, 235, 0.3),
+    0 4px 16px rgba(147, 51, 234, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.premium-logo-symbol:hover {
+  box-shadow: 
+    0 12px 40px rgba(37, 99, 235, 0.4),
+    0 6px 20px rgba(147, 51, 234, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.premium-logo-symbol::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: transform 0.6s ease-in-out;
+}
+
+.premium-logo-symbol:hover::before {
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+.logo-letter {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  position: relative;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -1px;
+}
+
+.logo-accent {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(45deg, #fbbf24, #f59e0b);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
   }
 }
 
-/* Additional styles for the logo container */
-.header-container {
-  display: flex;
-  align-items: center; /* Vertically center content */
-  justify-content: flex-start; /* Align items to the left */
-  gap: 10px; /* Space between the logo and the text */
-  padding: 10px 20px; /* Add some padding for spacing */
-  background: linear-gradient(90deg, #1e3c72, #2a5298); /* Stylish gradient background */
-  border-radius: 20px; /* Rounded corners for the container */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for the header */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .premium-logo-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .premium-logo-symbol {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .logo-letter {
+    font-size: 22px;
+  }
+  
+  .logo-accent {
+    width: 6px;
+    height: 6px;
+    top: 6px;
+    right: 6px;
+  }
 }
 
-.header-container a {
-  font-size: 24px; /* Increase the font size of the text */
-  font-weight: bold;
-  color: white; /* White text color */
-  text-decoration: none; /* Remove underline from the link */
-  text-transform: uppercase; /* Uppercase text for a sleek look */
-  letter-spacing: 2px; /* Slight letter-spacing for style */
-  transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+/* Additional premium effects */
+.premium-logo-symbol::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.1) 100%);
+  pointer-events: none;
 }
 
-.header-container a:hover {
-  color: #f0b800; /* Change color on hover for effect */
+/* Hover state for the entire logo container */
+.premium-logo-container:hover .premium-logo-symbol {
+  animation: logoGlow 0.6s ease-in-out;
+}
+
+@keyframes logoGlow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.1);
+  }
+}
+
+/* Focus states for accessibility */
+.premium-logo-container:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+.premium-logo-container:focus .premium-logo-symbol {
+  box-shadow: 
+    0 0 0 3px rgba(37, 99, 235, 0.3),
+    0 8px 32px rgba(37, 99, 235, 0.3),
+    0 4px 16px rgba(147, 51, 234, 0.2);
 }
