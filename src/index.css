@@ -1,19 +1,55 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  theme: {
-    extend: {
-      colors: {
-        // 💎 Premium Luxury Violet Theme
-        'bg-primary': '#1E1B2E',      // Deep violet background
-        'text-primary': '#EDE9FE',    // Soft violet text
-        'heading': '#D6BBFB',         // Light lavender/violet
-        'cta': '#7C3AED',             // Rich violet (Call-to-action)
-        'cta-text': '#FFFFFF',        // White text on CTA
-        'border': '#3F3A60',          // Subtle violet border
-        'highlight': '#FACC15',       // Premium gold highlight
-      },
-    },
-  },
-  plugins: [],
-};
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-primary;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: theme('colors.heading');
+  }
+
+  a {
+    color: theme('colors.highlight');
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Custom components */
+@layer components {
+  .btn-primary {
+    @apply bg-cta text-cta-text hover:bg-opacity-90 transition-colors px-4 py-2 rounded-md font-semibold;
+  }
+
+  .btn-secondary {
+    @apply bg-highlight text-bg-primary hover:bg-opacity-80 transition-colors px-4 py-2 rounded-md font-medium;
+  }
+
+  .border-custom {
+    @apply border border-border;
+  }
+
+  .card {
+    @apply bg-bg-primary border-custom p-4 rounded-xl shadow-lg;
+  }
+
+  .input {
+    @apply border border-border bg-transparent text-text-primary px-3 py-2 rounded-md placeholder:text-text-primary;
+  }
+
+  .section-title {
+    @apply text-heading text-2xl font-bold mb-4;
+  }
+
+  .link {
+    @apply text-highlight hover:underline cursor-pointer;
+  }
+}
