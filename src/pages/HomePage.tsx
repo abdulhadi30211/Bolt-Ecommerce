@@ -15,7 +15,7 @@ export function HomePage() {
     .sort((a, b) => (b.discount || 0) - (a.discount || 0));
   
   return (
-    <div>
+    <div className="bg-bg-primary">
       <Hero />
       
       <FeaturedProducts 
@@ -25,9 +25,9 @@ export function HomePage() {
       />
       
       {/* Shop by Category Section */}
-      <div className="bg-gray-50 py-12">
+      <div className="bg-highlight py-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Shop by Category</h2>
+          <h2 className="text-2xl font-bold text-heading mb-6 text-center">Shop by Category</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
               { name: 'Electronics', image: 'https://images.pexels.com/photos/1841841/pexels-photo-1841841.jpeg' },
@@ -37,7 +37,7 @@ export function HomePage() {
               { name: 'Toys', image: 'https://images.pexels.com/photos/163036/mario-luigi-yoschi-figures-163036.jpeg' },
               { name: 'Sports', image: 'https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg' },
             ].map(category => (
-              <div key={category.name} className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+              <div key={category.name} className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer border border-border">
                 <div className="aspect-square">
                   <img 
                     src={category.image} 
@@ -45,8 +45,8 @@ export function HomePage() {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                  <h3 className="text-white font-medium text-lg">{category.name}</h3>
+                <div className="absolute inset-0 bg-text-primary bg-opacity-40 flex items-center justify-center">
+                  <h3 className="text-cta-text font-medium text-lg">{category.name}</h3>
                 </div>
               </div>
             ))}
@@ -67,11 +67,11 @@ export function HomePage() {
       />
       
       {/* Promotional Banner */}
-      <div className="bg-orange-500 text-white py-16">
+      <div className="bg-border text-text-primary py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Special Offer!</h2>
+          <h2 className="text-3xl font-bold mb-4 text-heading">Special Offer!</h2>
           <p className="text-xl mb-6">Get an extra 10% off your first order with code: WELCOME10</p>
-          <button className="bg-white text-orange-500 hover:bg-orange-100 px-6 py-3 rounded-full font-medium transition-colors">
+          <button className="bg-cta text-cta-text hover:bg-opacity-90 px-6 py-3 rounded-full font-medium transition-colors">
             Shop Now
           </button>
         </div>

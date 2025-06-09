@@ -19,7 +19,7 @@ export function CategoryFilter({ activeCategory, onChangeCategory }: CategoryFil
   
   return (
     <div className="mb-6">
-      <h2 className="text-lg font-semibold text-gray-800 mb-3">Categories</h2>
+      <h2 className="text-lg font-semibold text-heading mb-3">Categories</h2>
       <div className="flex flex-wrap gap-2">
         {categories.map(category => (
           <button
@@ -27,8 +27,8 @@ export function CategoryFilter({ activeCategory, onChangeCategory }: CategoryFil
             onClick={() => onChangeCategory(category.value)}
             className={`px-4 py-2 rounded-full text-sm transition-colors ${
               activeCategory === category.value
-                ? 'bg-blue-500 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                ? 'bg-cta text-cta-text'
+                : 'bg-highlight text-text-primary hover:bg-border'
             }`}
           >
             {category.label}

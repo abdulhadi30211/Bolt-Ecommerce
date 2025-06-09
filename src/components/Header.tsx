@@ -29,7 +29,7 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 bg-white shadow-md z-50">
+    <header className="sticky top-0 bg-bg-primary shadow-md z-50 border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           
@@ -40,16 +40,16 @@ export function Header() {
               alt="Luminvera"
               className="header-logo"
             />
-            <Link to="https://liogi-store.vercel.app/">Luminvera</Link>
+            <Link to="https://liogi-store.vercel.app/" className="text-heading font-bold text-xl">Luminvera</Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-blue-500 transition-colors">Home</Link>
-            <Link to="/products" className="text-gray-700 hover:text-blue-500 transition-colors">All Products</Link>
-            <Link to="/products/electronics" className="text-gray-700 hover:text-blue-500 transition-colors">Electronics</Link>
-            <Link to="/products/clothing" className="text-gray-700 hover:text-blue-500 transition-colors">Clothing</Link>
-            <Link to="/products/home" className="text-gray-700 hover:text-blue-500 transition-colors">Home</Link>
+            <Link to="/" className="text-text-primary hover:text-heading transition-colors">Home</Link>
+            <Link to="/products" className="text-text-primary hover:text-heading transition-colors">All Products</Link>
+            <Link to="/products/electronics" className="text-text-primary hover:text-heading transition-colors">Electronics</Link>
+            <Link to="/products/clothing" className="text-text-primary hover:text-heading transition-colors">Clothing</Link>
+            <Link to="/products/home" className="text-text-primary hover:text-heading transition-colors">Home</Link>
           </nav>
 
           {/* Search Bar */}
@@ -58,13 +58,13 @@ export function Header() {
               <input
                 type="text"
                 placeholder="Search products..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-cta bg-bg-primary text-text-primary"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <button 
                 type="submit"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-500"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-text-primary hover:text-cta"
               >
                 <Search size={20} />
               </button>
@@ -75,7 +75,7 @@ export function Header() {
           <div className="flex items-center space-x-4">
             <button
               onClick={handleAuthClick}
-              className="flex items-center text-gray-700 hover:text-blue-500 transition-colors"
+              className="flex items-center text-text-primary hover:text-heading transition-colors"
             >
               <User size={20} />
               <span className="ml-2 hidden sm:inline">
@@ -84,9 +84,9 @@ export function Header() {
             </button>
 
             <Link to="/cart" className="relative">
-              <ShoppingCart className="text-gray-700 hover:text-blue-500 transition-colors" />
+              <ShoppingCart className="text-text-primary hover:text-heading transition-colors" />
               {cart.items.length > 0 && (
-                <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                <span className="absolute -top-2 -right-2 bg-cta text-cta-text text-xs w-5 h-5 flex items-center justify-center rounded-full">
                   {cart.items.reduce((sum, item) => sum + item.quantity, 0)}
                 </span>
               )}
@@ -104,13 +104,13 @@ export function Header() {
             <input
               type="text"
               placeholder="Search products..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-cta bg-bg-primary text-text-primary"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button 
               type="submit"
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-500"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-text-primary hover:text-cta"
             >
               <Search size={20} />
             </button>
@@ -121,11 +121,11 @@ export function Header() {
         {isMenuOpen && (
           <nav className="mt-4 md:hidden">
             <ul className="flex flex-col space-y-2">
-              <li><Link to="/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-gray-700 hover:text-blue-500">Home</Link></li>
-              <li><Link to="/products" onClick={() => setIsMenuOpen(false)} className="block py-2 text-gray-700 hover:text-blue-500">All Products</Link></li>
-              <li><Link to="/products/electronics" onClick={() => setIsMenuOpen(false)} className="block py-2 text-gray-700 hover:text-blue-500">Electronics</Link></li>
-              <li><Link to="/products/clothing" onClick={() => setIsMenuOpen(false)} className="block py-2 text-gray-700 hover:text-blue-500">Clothing</Link></li>
-              <li><Link to="/products/home" onClick={() => setIsMenuOpen(false)} className="block py-2 text-gray-700 hover:text-blue-500">Home</Link></li>
+              <li><Link to="/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-text-primary hover:text-heading">Home</Link></li>
+              <li><Link to="/products" onClick={() => setIsMenuOpen(false)} className="block py-2 text-text-primary hover:text-heading">All Products</Link></li>
+              <li><Link to="/products/electronics" onClick={() => setIsMenuOpen(false)} className="block py-2 text-text-primary hover:text-heading">Electronics</Link></li>
+              <li><Link to="/products/clothing" onClick={() => setIsMenuOpen(false)} className="block py-2 text-text-primary hover:text-heading">Clothing</Link></li>
+              <li><Link to="/products/home" onClick={() => setIsMenuOpen(false)} className="block py-2 text-text-primary hover:text-heading">Home</Link></li>
             </ul>
           </nav>
         )}

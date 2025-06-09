@@ -35,8 +35,8 @@ export function ProductListPage() {
   };
   
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl md:text-3xl font-bold mb-6">
+    <div className="container mx-auto px-4 py-8 bg-bg-primary min-h-screen">
+      <h1 className="text-2xl md:text-3xl font-bold mb-6 text-heading">
         {activeCategory === 'all' ? 'All Products' : `${activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1)} Products`}
       </h1>
       
@@ -44,7 +44,7 @@ export function ProductListPage() {
       
       {filteredProducts.length === 0 ? (
         <div className="py-12 text-center">
-          <p className="text-lg text-gray-600">No products found in this category.</p>
+          <p className="text-lg text-text-primary">No products found in this category.</p>
         </div>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">

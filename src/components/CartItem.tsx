@@ -26,7 +26,7 @@ export function CartItem({ item }: CartItemProps) {
   };
   
   return (
-    <div className="flex flex-col sm:flex-row items-center py-4 border-b border-gray-200">
+    <div className="flex flex-col sm:flex-row items-center py-4 border-b border-border">
       {/* Product Image */}
       <div className="w-24 h-24 flex-shrink-0 mb-4 sm:mb-0">
         <img
@@ -38,12 +38,12 @@ export function CartItem({ item }: CartItemProps) {
       
       {/* Product Info */}
       <div className="flex-1 px-4">
-        <h3 className="text-lg font-medium text-gray-800">{product.name}</h3>
-        <p className="text-sm text-gray-500">{product.category}</p>
+        <h3 className="text-lg font-medium text-heading">{product.name}</h3>
+        <p className="text-sm text-text-primary opacity-70">{product.category}</p>
         <div className="mt-1 flex items-center">
-          <span className="font-semibold text-gray-900">${product.price.toFixed(2)}</span>
+          <span className="font-semibold text-text-primary">${product.price.toFixed(2)}</span>
           {product.originalPrice && (
-            <span className="ml-2 text-sm text-gray-500 line-through">
+            <span className="ml-2 text-sm text-text-primary opacity-60 line-through">
               ${product.originalPrice.toFixed(2)}
             </span>
           )}
@@ -51,18 +51,18 @@ export function CartItem({ item }: CartItemProps) {
       </div>
       
       {/* Quantity Controls */}
-      <div className="flex items-center border border-gray-300 rounded-md mt-4 sm:mt-0">
+      <div className="flex items-center border border-border rounded-md mt-4 sm:mt-0">
         <button
           onClick={handleDecrement}
-          className="px-3 py-1 text-gray-600 hover:bg-gray-100 disabled:opacity-50"
+          className="px-3 py-1 text-text-primary hover:bg-highlight disabled:opacity-50"
           disabled={quantity <= 1}
         >
           <Minus size={16} />
         </button>
-        <span className="px-3 py-1 text-gray-800">{quantity}</span>
+        <span className="px-3 py-1 text-text-primary">{quantity}</span>
         <button
           onClick={handleIncrement}
-          className="px-3 py-1 text-gray-600 hover:bg-gray-100"
+          className="px-3 py-1 text-text-primary hover:bg-highlight"
         >
           <Plus size={16} />
         </button>
@@ -70,7 +70,7 @@ export function CartItem({ item }: CartItemProps) {
       
       {/* Item Total */}
       <div className="text-right ml-4 sm:ml-6">
-        <div className="text-lg font-semibold text-gray-900">
+        <div className="text-lg font-semibold text-text-primary">
           ${(product.price * quantity).toFixed(2)}
         </div>
         <button
