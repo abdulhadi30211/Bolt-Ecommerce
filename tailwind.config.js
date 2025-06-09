@@ -4,14 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        // 💎 Premium Luxury Violet Theme
-        'bg-primary': '#1E1B2E',      // Deep violet background
-        'text-primary': '#EDE9FE',    // Soft violet text
-        'heading': '#D6BBFB',         // Light lavender/violet
-        'cta': '#7C3AED',             // Rich violet (Call-to-action)
-        'cta-text': '#FFFFFF',        // White text on CTA
-        'border': '#3F3A60',          // Subtle violet border
-        'highlight': '#FACC15',       // Premium gold highlight
+        // 🎨 Custom color palette
+        'bg-primary': '#FFFFFF',       // White background for body
+        'text-primary': '#222222',     // Dark Grey general text and headings
+        'heading': '#222222',          // Headings
+        'footer': '#E0E7E3',           // Light Mint Green (footer/sections)
+        'accent': '#C58C63',           // Light Brown (links/buttons)
+        'cta': '#000000',              // Black (button backgrounds)
+        'cta-text': '#FFFFFF',         // White text on CTA
+        'input-bg': '#FFFFFF',         // White input fields
+        'border': '#C58C63',           // Light Brown border
       },
     },
   },
