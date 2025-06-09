@@ -4,14 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Custom color palette
-        'bg-primary': '#f2efe8',
-        'text-primary': '#1c1c1c',
-        'heading': '#2d3a4a',
-        'cta': '#2e4f46',
-        'cta-text': '#f2efe8',
-        'border': '#c8a96b',
-        'highlight': '#e3c9c0',
+        // 💎 Premium Luxury Violet Theme
+        'bg-primary': '#1E1B2E',      // Deep violet background
+        'text-primary': '#EDE9FE',    // Soft violet text
+        'heading': '#D6BBFB',         // Light lavender/violet
+        'cta': '#7C3AED',             // Rich violet (Call-to-action)
+        'cta-text': '#FFFFFF',        // White text on CTA
+        'border': '#3F3A60',          // Subtle violet border
+        'highlight': '#FACC15',       // Premium gold highlight
       },
     },
   },
