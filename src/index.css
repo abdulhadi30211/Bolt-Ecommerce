@@ -4,21 +4,22 @@
 
 @layer base {
   body {
-    background-color: #f2efe8;
-    color: #1c1c1c;
+    background-color: #1E1B2E; /* Deep violet */
+    color: #EDE9FE; /* Soft violet text */
+    font-family: 'Inter', sans-serif; /* Optional premium font */
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-cta text-cta-text hover:bg-opacity-90 transition-colors;
+    @apply bg-[#7C3AED] text-[#FFFFFF] hover:bg-[#6D28D9] transition-colors;
   }
-  
+
   .btn-secondary {
-    @apply bg-highlight text-text-primary hover:bg-opacity-80 transition-colors;
+    @apply bg-[#FACC15] text-[#1E1B2E] hover:bg-opacity-90 transition-colors;
   }
-  
+
   .border-custom {
-    @apply border-border;
+    @apply border-[#3F3A60];
   }
 }
