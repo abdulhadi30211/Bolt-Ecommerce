@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Hero } from '../components/Hero';
 import { FeaturedProducts } from '../components/FeaturedProducts';
+import { AmazonStyleCategories } from '../components/AmazonStyleCategories';
 import { QuickViewModal } from '../components/QuickViewModal';
 import { Product } from '../types';
 import { products } from '../data/products';
@@ -24,35 +25,8 @@ export function HomePage() {
         onQuickView={setQuickViewProduct}
       />
       
-      {/* Shop by Category Section */}
-      <div className="bg-highlight py-12">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-heading mb-6 text-center">Shop by Category</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { name: 'Electronics', image: 'https://images.pexels.com/photos/1841841/pexels-photo-1841841.jpeg' },
-              { name: 'Clothing', image: 'https://images.pexels.com/photos/934063/pexels-photo-934063.jpeg' },
-              { name: 'Home', image: 'https://images.pexels.com/photos/3144581/pexels-photo-3144581.jpeg' },
-              { name: 'Beauty', image: 'https://images.pexels.com/photos/3373739/pexels-photo-3373739.jpeg' },
-              { name: 'Toys', image: 'https://images.pexels.com/photos/163036/mario-luigi-yoschi-figures-163036.jpeg' },
-              { name: 'Sports', image: 'https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg' },
-            ].map(category => (
-              <div key={category.name} className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer border border-border">
-                <div className="aspect-square">
-                  <img 
-                    src={category.image} 
-                    alt={category.name} 
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-text-primary bg-opacity-40 flex items-center justify-center">
-                  <h3 className="text-cta-text font-medium text-lg">{category.name}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* Amazon-style Categories Section */}
+      <AmazonStyleCategories />
       
       <FeaturedProducts 
         products={newArrivals}
