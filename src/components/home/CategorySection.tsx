@@ -1,204 +1,110 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { MAIN_CATEGORIES } from '../../constants/categories';
 
 interface CategoryCardProps {
   title: string;
-  items: Array<{
-    name: string;
-    image: string;
-    link: string;
-  }>;
-  mainImage?: string;
+  icon: string;
+  image: string;
   link: string;
+  description?: string;
 }
 
-function CategoryCard({ title, items, mainImage, link }: CategoryCardProps) {
+function CategoryCard({ title, icon, image, link, description }: CategoryCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 h-full">
-      <h3 className="text-xl font-bold text-gray-900 mb-4">{title}</h3>
-      
-      {mainImage ? (
+    <Link to={link} className="group">
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 h-full hover:shadow-lg transition-shadow">
+        <div className="flex items-center mb-4">
+          <span className="text-2xl mr-2">{icon}</span>
+          <h3 className="text-lg font-bold text-gray-900">{title}</h3>
+        </div>
+        
         <div className="mb-4">
           <img
-            src={mainImage}
+            src={image}
             alt={title}
-            className="w-full h-48 object-cover rounded-lg"
+            className="w-full h-32 object-cover rounded-lg group-hover:scale-105 transition-transform duration-200"
           />
         </div>
-      ) : (
-        <div className="grid grid-cols-2 gap-3 mb-4">
-          {items.slice(0, 4).map((item, index) => (
-            <Link key={index} to={item.link} className="group">
-              <div className="aspect-square overflow-hidden rounded-lg">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
-                />
-              </div>
-              <p className="text-sm text-gray-700 mt-1 group-hover:text-orange-600">
-                {item.name}
-              </p>
-            </Link>
-          ))}
-        </div>
-      )}
-      
-      <Link
-        to={link}
-        className="text-blue-600 hover:text-orange-600 text-sm font-medium hover:underline"
-      >
-        Shop now
-      </Link>
-    </div>
+        
+        {description && (
+          <p className="text-sm text-gray-600 mb-3">{description}</p>
+        )}
+        
+        <span className="text-blue-600 hover:text-orange-600 text-sm font-medium group-hover:underline">
+          Shop now
+        </span>
+      </div>
+    </Link>
   );
 }
 
 export function CategorySection() {
-  const categories = [
+  const categoryData = [
     {
-      title: "Gaming accessories",
-      link: "/products/electronics",
-      items: [
-        {
-          name: "Headsets",
-          image: "https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg",
-          link: "/products/electronics"
-        },
-        {
-          name: "Keyboards",
-          image: "https://images.pexels.com/photos/1279107/pexels-photo-1279107.jpeg",
-          link: "/products/electronics"
-        },
-        {
-          name: "Computer mice",
-          image: "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg",
-          link: "/products/electronics"
-        },
-        {
-          name: "Chairs",
-          image: "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg",
-          link: "/products/electronics"
-        }
-      ]
+      id: 'home-kitchen',
+      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg',
+      description: 'Everything for your home and kitchen needs'
     },
     {
-      title: "Shop for your home",
-      link: "/products/home",
-      items: [
-        {
-          name: "Cleaning supplies",
-          image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-          link: "/products/home"
-        },
-        {
-          name: "Home storage",
-          image: "https://images.pexels.com/photos/3144581/pexels-photo-3144581.jpeg",
-          link: "/products/home"
-        },
-        {
-          name: "Kitchen essentials",
-          image: "https://images.pexels.com/photos/1599791/pexels-photo-1599791.jpeg",
-          link: "/products/home"
-        },
-        {
-          name: "Bathroom needs",
-          image: "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg",
-          link: "/products/home"
-        }
-      ]
+      id: 'tech-gadgets',
+      image: 'https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg',
+      description: 'Latest gadgets and electronics'
     },
     {
-      title: "Health & Personal Care",
-      link: "/products/beauty",
-      items: [
-        {
-          name: "Supplements",
-          image: "https://images.pexels.com/photos/3373739/pexels-photo-3373739.jpeg",
-          link: "/products/beauty"
-        },
-        {
-          name: "Skincare",
-          image: "https://images.pexels.com/photos/3321416/pexels-photo-3321416.jpeg",
-          link: "/products/beauty"
-        },
-        {
-          name: "Personal care",
-          image: "https://images.pexels.com/photos/3373739/pexels-photo-3373739.jpeg",
-          link: "/products/beauty"
-        },
-        {
-          name: "Wellness",
-          image: "https://images.pexels.com/photos/4498555/pexels-photo-4498555.jpeg",
-          link: "/products/beauty"
-        }
-      ]
+      id: 'fashion-travel',
+      image: 'https://ik.imagekit.io/123e/download.jpg?updatedAt=1749461277742',
+      description: 'Fashion and travel essentials'
     },
     {
-      title: "Fashion trends you like",
-      link: "/products/clothing",
-      items: [
-        {
-          name: "Dresses",
-          image: "https://ik.imagekit.io/123e/download.jpg?updatedAt=1749461277742",
-          link: "/products/clothing"
-        },
-        {
-          name: "Knits",
-          image: "https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg",
-          link: "/products/clothing"
-        },
-        {
-          name: "Jackets",
-          image: "https://ik.imagekit.io/123e/download%20(1).jpg?updatedAt=1749461277936",
-          link: "/products/clothing"
-        },
-        {
-          name: "Jewelry",
-          image: "https://images.pexels.com/photos/934063/pexels-photo-934063.jpeg",
-          link: "/products/clothing"
-        }
-      ]
+      id: 'baby-family',
+      image: 'https://images.pexels.com/photos/35619/capri-ford-oldtimer-automotive.jpg',
+      description: 'Products for babies and families'
     },
     {
-      title: "Electronics",
-      mainImage: "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg",
-      link: "/products/electronics",
-      items: []
+      id: 'health-beauty',
+      image: 'https://images.pexels.com/photos/3321416/pexels-photo-3321416.jpeg',
+      description: 'Health and beauty products'
     },
     {
-      title: "Beauty picks",
-      mainImage: "https://images.pexels.com/photos/3373739/pexels-photo-3373739.jpeg",
-      link: "/products/beauty",
-      items: []
+      id: 'kitchen-food',
+      image: 'https://ik.imagekit.io/123e/download%20(2).jpg?updatedAt=1749468981834',
+      description: 'Kitchen essentials and food items'
     },
     {
-      title: "Discover fashion trends",
-      mainImage: "https://ik.imagekit.io/123e/download.jpg?updatedAt=1749461277742",
-      link: "/products/clothing",
-      items: []
+      id: 'pets-outdoors',
+      image: 'https://images.pexels.com/photos/4498555/pexels-photo-4498555.jpeg',
+      description: 'Pet supplies and outdoor gear'
     },
     {
-      title: "Home refresh ideas",
-      mainImage: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-      link: "/products/home",
-      items: []
+      id: 'office-stationery',
+      image: 'https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg',
+      description: 'Office and stationery supplies'
     }
   ];
 
   return (
     <div className="bg-gray-100 py-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((category, index) => (
-            <CategoryCard
-              key={index}
-              title={category.title}
-              items={category.items}
-              mainImage={category.mainImage}
-              link={category.link}
-            />
-          ))}
+        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Shop All Categories</h2>
+        <p className="text-gray-600 text-center mb-8">Discover our wide selection of products</p>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+          {categoryData.map((category) => {
+            const categoryInfo = MAIN_CATEGORIES.find(cat => cat.id === category.id);
+            if (!categoryInfo) return null;
+            
+            return (
+              <CategoryCard
+                key={category.id}
+                title={categoryInfo.label}
+                icon={categoryInfo.icon}
+                image={category.image}
+                link={`/products/${category.id}`}
+                description={category.description}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

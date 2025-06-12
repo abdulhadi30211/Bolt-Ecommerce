@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../../../context/CartContext';
 import { useAuth } from '../../../context/AuthContext';
 import { AuthModal } from '../../AuthModal';
+import { MAIN_CATEGORIES } from '../../../constants/categories';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,9 +15,7 @@ export function Header() {
   const { cart } = useCart();
   const { user, signOut } = useAuth();
 
-  const categories = [
-    'All', 'Electronics', 'Fashion', 'Home & Kitchen', 'Beauty', 'Sports', 'Toys', 'Books'
-  ];
+  const categories = ['All', ...MAIN_CATEGORIES.slice(1).map(cat => cat.label)];
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -75,7 +74,7 @@ export function Header() {
                 </select>
                 <input
                   type="text"
-                  placeholder="Search Luminvera"
+                  placeholder="Search products, categories, or brands..."
                   className="flex-1 px-4 py-2 text-gray-800 focus:outline-none"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -133,16 +132,22 @@ export function Header() {
         {/* Navigation bar */}
         <div className="bg-gray-800 border-t border-gray-700">
           <div className="container mx-auto px-4">
-            <nav className="flex items-center py-2 space-x-6 text-sm">
-              <Link to="/products" className="hover:text-orange-400 flex items-center">
+            <nav className="flex items-center py-2 space-x-6 text-sm overflow-x-auto">
+              <Link to="/products" className="hover:text-orange-400 flex items-center whitespace-nowrap">
                 <Menu size={16} className="mr-1" />
                 All
               </Link>
-              <Link to="/deals" className="hover:text-orange-400">Today's Deals</Link>
-              <Link to="/customer-service" className="hover:text-orange-400">Customer Service</Link>
-              <Link to="/registry" className="hover:text-orange-400">Registry</Link>
-              <Link to="/gift-cards" className="hover:text-orange-400">Gift Cards</Link>
-              <Link to="/sell" className="hover:text-orange-400">Sell</Link>
+              {MAIN_CATEGORIES.slice(1, 6).map(category => (
+                <Link 
+                  key={category.id}
+                  to={`/products/${category.id}`} 
+                  className="hover:text-orange-400 whitespace-nowrap"
+                >
+                  {category.label}
+                </Link>
+              ))}
+              <Link to="/deals" className="hover:text-orange-400 whitespace-nowrap">Today's Deals</Link>
+              <Link to="/customer-service" className="hover:text-orange-400 whitespace-nowrap">Customer Service</Link>
             </nav>
           </div>
         </div>
@@ -152,8 +157,15 @@ export function Header() {
           <div className="md:hidden bg-gray-800 border-t border-gray-700">
             <nav className="px-4 py-4 space-y-2">
               <Link to="/products" className="block py-2 hover:text-orange-400">All Products</Link>
-              <Link to="/deals" className="block py-2 hover:text-orange-400">Today's Deals</Link>
-              <Link to="/customer-service" className="block py-2 hover:text-orange-400">Customer Service</Link>
+              {MAIN_CATEGORIES.slice(1).map(category => (
+                <Link 
+                  key={category.id}
+                  to={`/products/${category.id}`} 
+                  className="block py-2 hover:text-orange-400"
+                >
+                  {category.icon} {category.label}
+                </Link>
+              ))}
               <div onClick={handleAuthClick} className="block py-2 hover:text-orange-400 cursor-pointer">
                 {user ? 'Sign Out' : 'Sign In'}
               </div>

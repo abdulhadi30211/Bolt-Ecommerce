@@ -6,6 +6,7 @@ export interface Product {
   description: string;
   image: string;
   category: string;
+  subcategory?: string;
   rating: number;
   inStock: boolean;
   isNew?: boolean;
@@ -20,9 +21,23 @@ export interface CartItem {
 
 export type Category = 
   | 'all'
-  | 'electronics'
-  | 'clothing'
-  | 'home'
-  | 'beauty'
-  | 'toys'
-  | 'sports';
+  | 'home-kitchen'
+  | 'baby-family'
+  | 'fashion-travel'
+  | 'health-beauty'
+  | 'kitchen-food'
+  | 'tech-gadgets'
+  | 'pets-outdoors'
+  | 'auto-diy'
+  | 'office-stationery';
+
+export interface CategoryStructure {
+  id: string;
+  name: string;
+  icon: string;
+  subcategories: {
+    id: string;
+    name: string;
+    items: string[];
+  }[];
+}
