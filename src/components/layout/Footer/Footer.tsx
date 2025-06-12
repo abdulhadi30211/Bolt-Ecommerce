@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, MessageCircle, Mail, Facebook, Music, PlayCircle } from 'lucide-react';
+import { Instagram, MessageCircle, Mail, Facebook, Music, PlayCircle} from 'lucide-react';
 
 export function Footer() {
   const scrollToTop = () => {
@@ -118,7 +118,7 @@ export function Footer() {
                   aria-label="Visit our YouTube channel" 
                   className="flex items-center text-gray-300 hover:text-white"
                 >
-                  <layCircle size={20} className="mr-2" />
+                  <PlayCircle size={20} className="mr-2" />
                   YouTube
                 </a>
 
