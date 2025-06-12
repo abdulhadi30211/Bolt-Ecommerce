@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, MessageCircle, Mail, ChevronUp, Facebook, YouTube, TikTok } from 'lucide-react';
+import { Instagram, MessageCircle, Mail, Facebook, YouTube, TikTok } from 'lucide-react';
 
 export function Footer() {
   const scrollToTop = () => {
@@ -21,7 +21,7 @@ export function Footer() {
       <div className="bg-gray-800 py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            
+
             {/* Brand Info */}
             <div>
               <div className="flex items-center mb-4">
@@ -32,7 +32,7 @@ export function Footer() {
               <p className="text-gray-300 text-sm mb-4">
                 Your trusted global store for everyday essentials.
               </p>
-              
+
               {/* Newsletter */}
               <div className="mt-6">
                 <h4 className="font-bold text-white mb-3">Newsletter</h4>
@@ -73,40 +73,78 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Follow Us / Contact */}
+            {/* Follow Us */}
             <div>
               <h3 className="font-bold text-white mb-4">Follow Us</h3>
               <div className="space-y-3">
-                <a href="#" className="flex items-center text-gray-300 hover:text-white">
+
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Visit our Instagram" 
+                  className="flex items-center text-gray-300 hover:text-white"
+                >
                   <Instagram size={20} className="mr-2" />
                   Instagram
                 </a>
-                <a href="#" className="flex items-center text-gray-300 hover:text-white">
+
+                <a 
+                  href="https://wa.me/1234567890" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Chat with us on WhatsApp" 
+                  className="flex items-center text-gray-300 hover:text-white"
+                >
                   <MessageCircle size={20} className="mr-2" />
                   WhatsApp
                 </a>
 
-<a href="#" className="flex items-center text-gray-300 hover:text-white">
+                <a 
+                  href="https://facebook.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Visit our Facebook" 
+                  className="flex items-center text-gray-300 hover:text-white"
+                >
                   <Facebook size={20} className="mr-2" />
                   Facebook
                 </a>
 
-                <a href="#" className="flex items-center text-gray-300 hover:text-white">
+                <a 
+                  href="https://youtube.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Visit our YouTube channel" 
+                  className="flex items-center text-gray-300 hover:text-white"
+                >
                   <YouTube size={20} className="mr-2" />
                   YouTube
                 </a>
 
-                <a href="#" className="flex items-center text-gray-300 hover:text-white">
+                <a 
+                  href="https://tiktok.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Visit our TikTok" 
+                  className="flex items-center text-gray-300 hover:text-white"
+                >
                   <TikTok size={20} className="mr-2" />
                   TikTok
                 </a>
-                
-                <a href="mailto:contact@luminvera.com" className="flex items-center text-gray-300 hover:text-white">
+
+                <a 
+                  href="mailto:contact@luminvera.com" 
+                  aria-label="Email us" 
+                  className="flex items-center text-gray-300 hover:text-white"
+                >
                   <Mail size={20} className="mr-2" />
                   contact@luminvera.com
                 </a>
+
               </div>
             </div>
+
           </div>
         </div>
       </div>
