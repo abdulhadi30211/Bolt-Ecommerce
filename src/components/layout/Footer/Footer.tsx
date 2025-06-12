@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, MessageCircle, Mail, Facebook, YouTube, TikTok } from 'lucide-react';
+import { Instagram, MessageCircle, Mail, Facebook, YouTube, Music } from 'lucide-react';
 
 export function Footer() {
   const scrollToTop = () => {
@@ -129,7 +129,7 @@ export function Footer() {
                   aria-label="Visit our TikTok" 
                   className="flex items-center text-gray-300 hover:text-white"
                 >
-                  <TikTok size={20} className="mr-2" />
+                  <Music size={20} className="mr-2" />
                   TikTok
                 </a>
 
