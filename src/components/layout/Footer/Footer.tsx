@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, MessageCircle, Mail, ChevronUp } from 'lucide-react';
+import { Instagram, MessageCircle, Mail, ChevronUp, Facebook, YouTube, TikTok } from 'lucide-react';
 
 export function Footer() {
   const scrollToTop = () => {
